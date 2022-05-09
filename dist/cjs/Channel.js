@@ -1396,7 +1396,7 @@ function useSendMessageCallback(_ref, _ref2) {
       messagesDispatcher = _ref2.messagesDispatcher;
   var messageInputRef = React.useRef(null);
   var sendMessage = React.useCallback(function () {
-    var text = messageInputRef.current.value;
+    var text = messageInputRef.current.value.replace(/\n/g,' \n');
 
     var createParamsDefault = function createParamsDefault(txt) {
       var message = typeof txt === 'string' ? txt.trim() : txt;
